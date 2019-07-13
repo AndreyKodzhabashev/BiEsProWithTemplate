@@ -3,6 +3,7 @@ namespace BiEsPro.Data.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     using BiEsPro.Data.Common.Models;
 
@@ -17,6 +18,18 @@ namespace BiEsPro.Data.Models
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
         }
+
+        [Required(AllowEmptyStrings = false)]
+        public string FirstName { get; set; }
+
+        [Required(AllowEmptyStrings = false)]
+        public string LastName { get; set; }
+
+        [Required]
+        [MinLength(10)]
+        [MaxLength(10)]
+        [Display(Name = "Unique Civil Number")]
+        public string Ucn { get; set; }
 
         // Audit info
         public DateTime CreatedOn { get; set; }
