@@ -22,9 +22,5 @@
   <ItemGroup>
     <ProjectReference Include="..\BiEsPro.Data.Common\BiEsPro.Data.Common.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ItemElements\" />
-  </ItemGroup>
   
 </Project>

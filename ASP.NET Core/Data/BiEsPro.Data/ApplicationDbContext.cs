@@ -8,7 +8,8 @@
 
     using BiEsPro.Data.Common.Models;
     using BiEsPro.Data.Models;
-
+    using BiEsPro.Data.Models.FluentAPIModelConfigurations;
+    using BiEsPro.Data.Models.ItemElements;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,11 @@
         }
 
         public DbSet<Setting> Settings { get; set; }
+
+        // DbSets for Items
+        public DbSet<Color> Colors { get; set; }
+        public DbSet<ItemType> ItemTypes { get; set; }
+        public DbSet<Item> Items { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
@@ -47,6 +53,11 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+
+            builder.ApplyConfiguration(new ColorConfig());
+            builder.ApplyConfiguration(new ItemConfig());
+            builder.ApplyConfiguration(new ItemConfig());
+
             // Needed for Identity models configuration
             base.OnModelCreating(builder);
 
