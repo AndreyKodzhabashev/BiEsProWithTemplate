@@ -21,10 +21,17 @@
 
         private static async Task SeedUserAdminAsync(RoleManager<ApplicationRole> roleManager, UserManager<ApplicationUser> userManager)
         {
+            var adminRoleId = roleManager.Roles.FirstOrDefault(x => x.Name == GlobalConstants.AdministratorRoleName)?.Id;
+            var adminUser = userManager.Users
+                                        .FirstOrDefault(
+                                                         x => x.Roles
+                                                                    .Any(
+                                                                            y => y.RoleId == adminRoleId &&
+                                                                                 y.UserId != null));
             var role = await roleManager.FindByNameAsync(GlobalConstants.AdministratorRoleName);
-            if (role != null)
+            if (role != null && adminUser == null)
             {
-                var adminUser = new ApplicationUser
+                adminUser = new ApplicationUser
                 {
                     UserName = "admin",
                     FirstName = "admin",

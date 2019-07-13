@@ -3,7 +3,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
-
+    using BiEsPro.Common;
     using BiEsPro.Data.Models;
 
     using Microsoft.AspNetCore.Authorization;
@@ -13,7 +13,7 @@
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
 
-    [AllowAnonymous]
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
 #pragma warning disable SA1649 // File name should match first type name
     public class RegisterModel : PageModel
 #pragma warning restore SA1649 // File name should match first type name
