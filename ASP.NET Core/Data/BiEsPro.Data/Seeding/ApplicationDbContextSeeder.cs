@@ -28,6 +28,8 @@
                               new RolesSeeder(),
                               new SettingsSeeder(),
                               new UserAdminSeeder(),
+                              new ItemTypesSeeder(),
+                              new ColorSeeder(),
                           };
 
             foreach (var seeder in seeders)
