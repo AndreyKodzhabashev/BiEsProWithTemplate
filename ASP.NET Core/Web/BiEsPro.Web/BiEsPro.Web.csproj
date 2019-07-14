@@ -38,8 +38,4 @@
     <ProjectReference Include="..\BiEsPro.Web.Infrastructure\BiEsPro.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\BiEsPro.Web.ViewModels\BiEsPro.Web.ViewModels.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\BIEsPro\Pages\" />
-  </ItemGroup>
 </Project>

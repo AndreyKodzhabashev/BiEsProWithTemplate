@@ -53,7 +53,6 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-
             builder.ApplyConfiguration(new ColorConfig());
             builder.ApplyConfiguration(new ItemConfig());
             builder.ApplyConfiguration(new ItemConfig());
