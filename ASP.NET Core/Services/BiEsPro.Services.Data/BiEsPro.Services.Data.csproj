@@ -21,6 +21,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\BiEsPro.Data.Common\BiEsPro.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\BiEsPro.Data.Models\BiEsPro.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\BiEsPro.Web.ViewModels\BiEsPro.Web.ViewModels.csproj" />
+    <ProjectReference Include="..\BiEsPro.Services.Mapping\BiEsPro.Services.Mapping.csproj" />
   </ItemGroup>
 
 </Project>
